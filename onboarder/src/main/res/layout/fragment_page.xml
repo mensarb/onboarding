@@ -18,7 +18,6 @@
         app:cardCornerRadius="6dp">
 
         <LinearLayout
-            android:id="@+id/cardLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -27,18 +26,26 @@
             android:paddingEnd="8dp"
             android:paddingBottom="32dp">
 
-            <ImageView
-                android:id="@+id/image"
-                tools:src="@drawable/next"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp" />
+                android:layout_height="100dp">
+                <ImageView
+                    android:id="@+id/image"
+                    tools:src="@drawable/next"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="@null" />
 
-            <TextView
-                android:id="@+id/imageIcon"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:gravity="center"
-                android:visibility="gone"/>
+                <TextView
+                    android:id="@+id/imageIcon"
+                    tools:text="I"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/title"

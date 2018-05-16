@@ -1,5 +1,8 @@
 package com.mensarb.onboarder.models;
 
+import android.support.annotation.ColorInt;
+import android.support.annotation.FontRes;
+
 /**
  * @author dkoller
  * @since 18.10.2017
@@ -7,18 +10,19 @@ package com.mensarb.onboarder.models;
 
 public class Page {
 
-    private int backgroundColor;
+    @ColorInt private int backgroundColor;
     private int image;
     private int imageHeight;
     private String imageIcon;
-    private int imageIconColor;
+    @ColorInt private int imageIconColor;
     private float imageIconTextSize;
-    private String imageIconTypeface;
+    @FontRes private int imageIconTypefaceResource;
+    private String imageIconTypefaceAsset;
     private String title;
-    private int titleColor;
+    @ColorInt private int titleColor;
     private float titleTextSize;
     private String description;
-    private int descriptionColor;
+    @ColorInt private int descriptionColor;
     private float descriptionTextSize;
 
     private Page(Builder builder){
@@ -28,7 +32,8 @@ public class Page {
         imageIcon = builder.imageIcon;
         imageIconColor = builder.imageIconColor;
         imageIconTextSize = builder.imageIconTextSize;
-        imageIconTypeface = builder.imageIconTypeface;
+        imageIconTypefaceResource = builder.imageIconTypefaceResource;
+        imageIconTypefaceAsset = builder.imageIconTypefaceAsset;
         title = builder.title;
         titleColor = builder.titleColor;
         titleTextSize = builder.titleTextSize;
@@ -37,6 +42,7 @@ public class Page {
         descriptionTextSize = builder.descriptionTextSize;
     }
 
+    @ColorInt
     public int getBackgroundColor() {
         return backgroundColor;
     }
@@ -53,6 +59,7 @@ public class Page {
         return imageIcon;
     }
 
+    @ColorInt
     public int getImageIconColor() {
         return imageIconColor;
     }
@@ -61,14 +68,20 @@ public class Page {
         return imageIconTextSize;
     }
 
-    public String getImageIconTypeface() {
-        return imageIconTypeface;
+    @FontRes
+    public int getImageIconTypefaceResource() {
+        return imageIconTypefaceResource;
+    }
+
+    public String getImageIconTypefaceAsset() {
+        return imageIconTypefaceAsset;
     }
 
     public String getTitle() {
         return title;
     }
 
+    @ColorInt
     public int getTitleColor() {
         return titleColor;
     }
@@ -77,6 +90,7 @@ public class Page {
         return description;
     }
 
+    @ColorInt
     public int getDescriptionColor() {
         return descriptionColor;
     }
@@ -89,23 +103,24 @@ public class Page {
         return descriptionTextSize;
     }
 
-    public static class Builder{
+    public static class Builder {
 
-        private int backgroundColor;
+        @ColorInt private int backgroundColor;
         private int image;
         private int imageHeight;
         private String imageIcon;
-        private int imageIconColor;
+        @ColorInt private int imageIconColor;
         private float imageIconTextSize;
-        private String imageIconTypeface;
+        @FontRes private int imageIconTypefaceResource;
+        private String imageIconTypefaceAsset;
         private String title;
-        private int titleColor;
+        @ColorInt private int titleColor;
         private float titleTextSize;
         private String description;
-        private int descriptionColor;
+        @ColorInt private int descriptionColor;
         private float descriptionTextSize;
 
-        public Builder backgroundColor(int color){
+        public Builder backgroundColor(@ColorInt int color){
             this.backgroundColor = color;
             return this;
         }
@@ -125,13 +140,25 @@ public class Page {
 
         /**
          * @param size in [sp]
-         * @param typeface name of typeface in assets folder
+         * @param fontRes id of typeface in font res folder
          */
-        public Builder image(String icon, int color, float size, String typeface){
+        public Builder image(String icon, @ColorInt int color, float size, @FontRes int fontRes){
             this.imageIcon = icon;
             this.imageIconColor = color;
             this.imageIconTextSize = size;
-            this.imageIconTypeface = typeface;
+            this.imageIconTypefaceResource = fontRes;
+            return this;
+        }
+
+        /**
+         * @param size in [sp]
+         * @param fontName name of typeface in asset folder
+         */
+        public Builder image(String icon, @ColorInt int color, float size,String fontName){
+            this.imageIcon = icon;
+            this.imageIconColor = color;
+            this.imageIconTextSize = size;
+            this.imageIconTypefaceAsset = fontName;
             return this;
         }
 
@@ -140,7 +167,7 @@ public class Page {
             return this;
         }
 
-        public Builder titleColor(int color){
+        public Builder titleColor(@ColorInt int color){
             this.titleColor = color;
             return this;
         }
@@ -158,7 +185,7 @@ public class Page {
             return this;
         }
 
-        public Builder descriptionColor(int color){
+        public Builder descriptionColor(@ColorInt int color){
             this.descriptionColor = color;
             return this;
         }

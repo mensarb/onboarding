@@ -27,6 +27,7 @@ public class OnboardActivity extends OnboardingActivity {
         backgroundColors.add(ContextCompat.getColor(this, R.color.primary_dark));
         backgroundColors.add(ContextCompat.getColor(this, R.color.primary_light));
         backgroundColors.add(ContextCompat.getColor(this, R.color.colorAccent));
+
         //setBackgroundColor(backgroundColors);
         //setBackgroundImage(R.drawable.girl, ImageView.ScaleType.CENTER_CROP);
         setGradientBackground();
@@ -62,11 +63,20 @@ public class OnboardActivity extends OnboardingActivity {
                 .build();
 
         Page page4 = new Page.Builder()
-                .image("\uEB3E", ContextCompat.getColor(this, R.color.primary_light), 64, "MaterialIcons-Regular.ttf")
+                .image("\uEB3E", ContextCompat.getColor(this, R.color.primary_light), 64, "materialicons_regular.ttf")
                 .backgroundColor(ContextCompat.getColor(this, R.color.white))
                 .title("IconFont")
                 .titleColor(ContextCompat.getColor(this, R.color.black))
-                .description("uses iconfont in assets folder")
+                .description("uses font in asset folder")
+                .descriptionColor(ContextCompat.getColor(this, R.color.black))
+                .build();
+
+        Page page5 = new Page.Builder()
+                .image("\uEB3E", ContextCompat.getColor(this, R.color.primary_light), 64, R.font.materialicons_regular)
+                .backgroundColor(ContextCompat.getColor(this, R.color.white))
+                .title("IconFont")
+                .titleColor(ContextCompat.getColor(this, R.color.black))
+                .description("uses font in res/font folder")
                 .descriptionColor(ContextCompat.getColor(this, R.color.black))
                 .build();
 
@@ -75,6 +85,7 @@ public class OnboardActivity extends OnboardingActivity {
         pages.add(page2);
         pages.add(page3);
         pages.add(page4);
+        pages.add(page5);
 
         setPages(pages);
     }
