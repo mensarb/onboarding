@@ -84,7 +84,6 @@ public class PageFragment extends Fragment {
                 cardView.setCardBackgroundColor(backgroundColor);
             }
 
-
             @FontRes int fontRes = bundle.getInt(PAGE_IMAGE_ICON_TYPEFACE_RESOURCE, -1);
             String fontName = bundle.getString(PAGE_IMAGE_ICON_TYPEFACE_ASSET);
 
