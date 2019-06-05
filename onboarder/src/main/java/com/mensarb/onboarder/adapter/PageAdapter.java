@@ -1,9 +1,10 @@
 package com.mensarb.onboarder.adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.mensarb.onboarder.models.Page;
 import com.mensarb.onboarder.modules.PageFragment;

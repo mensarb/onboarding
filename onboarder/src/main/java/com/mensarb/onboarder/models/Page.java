@@ -1,7 +1,7 @@
 package com.mensarb.onboarder.models;
 
-import android.support.annotation.ColorInt;
-import android.support.annotation.FontRes;
+import androidx.annotation.ColorInt;
+import androidx.annotation.FontRes;
 
 /**
  * @author dkoller
@@ -10,13 +10,15 @@ import android.support.annotation.FontRes;
 
 public class Page {
 
-    @ColorInt private int backgroundColor;
+    @ColorInt
+    private int backgroundColor;
     private int image;
     private int imageHeight;
     private String imageIcon;
     @ColorInt private int imageIconColor;
     private float imageIconTextSize;
-    @FontRes private int imageIconTypefaceResource;
+    @FontRes
+    private int imageIconTypefaceResource;
     private String imageIconTypefaceAsset;
     private String title;
     @ColorInt private int titleColor;
