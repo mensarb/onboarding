@@ -7,10 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.mensarb.onboarder.R;
@@ -29,9 +29,10 @@ import java.util.List;
  * @since 18.10.2017
  */
 
-public abstract class OnboardingActivity extends AppCompatActivity implements View.OnClickListener, ViewPager.OnPageChangeListener {
+public abstract class OnboardingActivity extends AppCompatActivity implements View.OnClickListener,
+        ViewPager.OnPageChangeListener {
 
-    protected RelativeLayout root;
+    protected ConstraintLayout root;
     protected ImageView backgroundImage;
     protected ViewPager viewPager;
     protected FrameLayout bottomLayout;

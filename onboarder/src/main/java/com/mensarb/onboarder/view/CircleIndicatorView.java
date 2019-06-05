@@ -12,7 +12,6 @@ import com.mensarb.onboarder.R;
 
 public class CircleIndicatorView extends View {
 
-    private Context context;
     private Paint activeIndicatorPaint;
     private Paint inactiveIndicatorPaint;
     private int radius;
@@ -36,7 +35,6 @@ public class CircleIndicatorView extends View {
     }
 
     private void init(Context context) {
-        this.context = context;
         activeIndicatorPaint = new Paint();
         activeIndicatorPaint.setColor(ContextCompat.getColor(context, R.color.active_indicator));
         activeIndicatorPaint.setAntiAlias(true);
@@ -50,7 +48,8 @@ public class CircleIndicatorView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        for (int i = 0; i < indicatorsCount; i++) {
+
+        for (int i=0; i<indicatorsCount; i++) {
             canvas.drawCircle(radius + (size * i), radius, radius / 2, inactiveIndicatorPaint);
         }
         canvas.drawCircle(radius + (size * position), radius, radius / 2, activeIndicatorPaint);
@@ -77,7 +76,7 @@ public class CircleIndicatorView extends View {
     }
 
     private int measureWidth(int measureSpec) {
-        int result = 0;
+        int result;
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
 

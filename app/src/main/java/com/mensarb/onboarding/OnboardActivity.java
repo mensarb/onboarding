@@ -44,7 +44,7 @@ public class OnboardActivity extends OnboardingActivity {
 
         Page page2 = new Page.Builder()
                 .image(R.drawable.beach)
-                .imageHeight(150)
+                .imageHeight(60)
                 .backgroundColor(ContextCompat.getColor(this, R.color.black_transparent))
                 .title("Beach")
                 .titleColor(ContextCompat.getColor(this, R.color.accent))

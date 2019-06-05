@@ -13,23 +13,4 @@ ext.versions = [
         publishVersion    : '1.0',
         publishVersionCode: 1,
 
-        /**
-         * Google Libs
-         */
-        supportLib        : '27.1.1',
-        playServiceLib    : '15.0.0',
-        multidexLib       : '1.0.1',
-
-        /**
-         * 3rd party libs
-         */
-        butterknife       : '8.8.1',
-        moxy              : '1.5.3',
-        dagger            : '2.16',
-        parceler          : '1.1.10',
-
-        /**
-         * Winterkit
-         */
-        winterkit         : '0.6.1' //'-SNAPSHOT'
 ]

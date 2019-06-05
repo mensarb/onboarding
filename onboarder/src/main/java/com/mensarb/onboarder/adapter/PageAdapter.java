@@ -2,6 +2,7 @@ package com.mensarb.onboarder.adapter;
 
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class PageAdapter extends FragmentStatePagerAdapter {
 
-    private List<Page> pages = new ArrayList<>();
+    private List<Page> pages;
     private List<PageFragment> fragments = new ArrayList<>();
 
     public PageAdapter(FragmentManager fm, List<Page> pages) {
@@ -35,11 +36,13 @@ public class PageAdapter extends FragmentStatePagerAdapter {
         }
     }
 
+    @NonNull
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         return super.instantiateItem(container, position);
     }
 
+    @NonNull
     @Override
     public Fragment getItem(int position) {
         return fragments.get(position);
